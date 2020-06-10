@@ -1,0 +1,2 @@
+#!/bin/bash
+for f in /mnt/Games/Downloads/Video *; do mv "$f" "${f// /_}"; done | rsync -avzr -e "ssh -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress --remove-source-files /mnt/Games/Downloads/Video/ user@127.0.0.1:/mnt/raid1/Plex/To_watch

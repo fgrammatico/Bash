@@ -1,0 +1,2 @@
+#!/bin/bash
+echo To: fabio.grammatico@outlook.com > ~/.messages/raid.txt ; echo From: fabio.grammatico@outlook.com >> ~/.messages/raid.txt ; echo Subject: Raid Status >> ~/.messages/raid.txt && sudo mdadm --detail /dev/md0 | while read OUTPUT; do echo "$OUTPUT" >> ~/.messages/raid.txt ; done && ssmtp fabio.grammatico@outlook.com < ~/.messages/raid.txt && rm ~/.messages/raid.txt

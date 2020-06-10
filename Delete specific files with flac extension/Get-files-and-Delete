@@ -1,0 +1,6 @@
+#!/bin/bash
+for i in $(mega-find /X_Home_Server/Downloads --pattern="*flac")
+do 
+mega-get $i /mnt/raid1/Plex/Music/Beets_Import
+mega-rm $i;
+done
